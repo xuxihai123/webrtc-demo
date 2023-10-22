@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+
+    <div>
+
+        <video id="test"  autoplay playsinline></video>
+
+        <button id="openMeida">openmedia</button>
+    </div>
+    
+
+    <script>
+        document.getElementById("openMeida").addEventListener("click",function(event){
+            navigator.mediaDevices.getUserMedia({audio:true,video:true}).then(stream=>{
+                document.getElementById("test").srcObject=stream;
+            },err=>{
+                console.log('err:',err);
+            })
+        });
+    </script>
+</body>
+</html>

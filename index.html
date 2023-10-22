@@ -107,7 +107,7 @@
             }
         });
 
-        img.src = "https://parva.cool/share/sky043.jpg";
+        // img.src = "https://parva.cool/share/sky043.jpg";
     })();
 
     //计算背景图片缩放（自适应窗口大小）
@@ -127,7 +127,7 @@
     var localStream;
 
     // 与服务器的websocket通信
-    var socket = new WebSocket("wss://parva.cool/rtc");
+    var socket = new WebSocket("wss://rtc01.gank.75cos.com/rtc");
 
     // 判断自己是否正在直播
     var isMe;
@@ -168,7 +168,7 @@
     function createRoom() {
         let roomName = document.querySelector("#name").value;
         if (!localStream) {
-            navigator.mediaDevices.getDisplayMedia({ video: true, audio: true })
+            navigator.mediaDevices.getUserMedia({ video: true, audio: true })
                 .then((stream) => {
                     localStream = stream;
                     socket.send(JSON.stringify({
@@ -211,6 +211,7 @@
         clearTimeout(防止双击setTimeout);
         防止双击setTimeout = setTimeout(function() { 防止双击 = ""; }, 800);
         let name = document.querySelector("#name").value;
+        debugger;
         socket.send(JSON.stringify({
             event: "joinRoom",
             name: name,
@@ -379,11 +380,11 @@
     // stun和turn服务器URL及配置
     var iceServer = {
         iceServers: [
-            { urls: "stun:parva.cool:3478" },
+            { urls: "stun:s2.75cos.com:3478" },
             {
-                urls: "turn:parva.cool:3478",
-                username: "parva",
-                credential: "Parva089"
+                urls: "turn:s2.75cos.com:3478",
+                username: "lqf",
+                credential: "12345"
             }
         ]
     };

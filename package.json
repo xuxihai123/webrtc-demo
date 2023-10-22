@@ -1,0 +1,25 @@
+{
+  "name": "webrtc-dmeo",
+  "version": "1.0.0",
+  "description": "[简单直播间 (parva.cool)](https://parva.cool/zbj/)",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Crzy633/WebRTC-.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Crzy633/WebRTC-/issues"
+  },
+  "homepage": "https://github.com/Crzy633/WebRTC-#readme",
+  "dependencies": {
+    "express": "^4.18.2",
+    "ws": "^8.14.2"
+  }
+}
